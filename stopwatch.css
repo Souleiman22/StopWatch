@@ -1,0 +1,63 @@
+/* Variables */
+:root {
+    --orange: #07f0f0;
+    --grey: #f3f3f3;
+    --white: #fff;
+    --base-color: var(--orange);
+}
+
+/* Mixin equivalent */
+.transition {
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.corners {
+    border-radius: 10px; /* Use this class to add rounded corners with a specific radius */
+}
+
+/* Styles */
+body {
+    background: var(--base-color);
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    height: 100%;
+}
+
+.wrapper {
+    width: 800px;
+    margin: 30px auto;
+    color: var(--white);
+    text-align: center;
+    /* Apply mixin classes if needed */
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 2.6em;
+    text-transform: uppercase;
+}
+
+#seconds, #tens{
+    font-size: 2em;
+}
+
+button{
+    @include corners (5px);
+    background: base-color;
+    color: rgb(112, 241, 6);
+    border: solid 1ppx white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding:18px 10px;
+    width: 180px;
+    margin: 10px;
+    outline: none;
+    &:hover{
+        @include transition;
+        background: rgb(189, 9, 9);
+        border: solid 1px white;
+        color: base-color;
+    }
+}
